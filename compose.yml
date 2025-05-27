@@ -16,8 +16,8 @@ services:
       ZOOKEEPER_SYNC_LIMIT: 2
       ZOOKEEPER_SERVERS: ec2a:2888:3888;ec2b:2888:3888;ec2c:2888:3888
     volumes:
-		  - ./zookeeper/data:/var/lib/zookeeper/data
-		command: ["bash", "-c", "echo 2 > /var/lib/zookeeper/data/myid && /etc/confluent/docker/run"]
+      - ./zookeeper/data:/var/lib/zookeeper/data
+    command: ["bash", "-c", "echo 2 > /var/lib/zookeeper/data/myid && /etc/confluent/docker/run"]
     extra_hosts:
       - "ec2a:172.31.4.9"
       - "ec2b:172.31.4.226"
